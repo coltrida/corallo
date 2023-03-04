@@ -56,7 +56,7 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Clienti
                     </a>
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="{{route('esercizi')}}">
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Esercizi
                     </a>
@@ -129,7 +129,7 @@
         <main class="p-3">
             @yield('content')
         </main>
-        <footer class="py-4 bg-light mt-auto">
+        {{--<footer class="py-4 bg-light mt-auto">
             <div class="container-fluid px-4">
                 <div class="d-flex align-items-center justify-content-between small">
                     <div class="text-muted">Copyright &copy; ColtriCat 2023</div>
@@ -140,7 +140,7 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer>--}}
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>

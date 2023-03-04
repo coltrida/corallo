@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('esercizios', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('linkFoto');
+            $table->string('linkFoto')->nullable();
             $table->timestamps();
         });
     }

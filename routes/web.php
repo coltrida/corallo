@@ -1,12 +1,19 @@
 <?php
 
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\EsercizioController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
-    Route::get('/clienti', [HomeController::class, 'clienti'])->name('clienti');
+
+    Route::get('/clienti', [ClientController::class, 'clienti'])->name('clienti');
+    Route::get('/inserisciCliente', [ClientController::class, 'inserisci'])->name('clienti.inserisci');
+
+    Route::get('/esercizi', [EsercizioController::class, 'esercizi'])->name('esercizi');
+    Route::get('/inserisciEsercizio', [EsercizioController::class, 'inserisci'])->name('esercizi.inserisci');
 });
 
 Route::get('/dashboard', function () {

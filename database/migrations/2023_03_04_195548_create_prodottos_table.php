@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->integer('prezzo');
-            $table->string('linkFoto');
+            $table->string('linkFoto')->nullable();
             $table->timestamps();
         });
     }
