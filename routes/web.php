@@ -11,9 +11,11 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/clienti', [ClientController::class, 'clienti'])->name('clienti');
     Route::get('/inserisciCliente', [ClientController::class, 'inserisci'])->name('clienti.inserisci');
+    Route::post('/ricercaCliente', [ClientController::class, 'ricerca'])->name('clienti.ricerca');
 
     Route::get('/esercizi', [EsercizioController::class, 'esercizi'])->name('esercizi');
     Route::get('/inserisciEsercizio', [EsercizioController::class, 'inserisci'])->name('esercizi.inserisci');
+    Route::post('/inserisciEsercizio', [EsercizioController::class, 'salva'])->name('esercizi.salva');
 });
 
 Route::get('/dashboard', function () {

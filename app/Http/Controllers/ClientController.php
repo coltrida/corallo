@@ -17,4 +17,10 @@ class ClientController extends Controller
     {
         return view('clienti.inserisci');
     }
+
+    public function ricerca(Request $request, ClientiService $clientiService)
+    {
+        $clients = $clientiService->filtraCliente($request);
+        return view('clienti.index', compact('clients'));
+    }
 }

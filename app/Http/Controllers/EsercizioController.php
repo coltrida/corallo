@@ -17,4 +17,14 @@ class EsercizioController extends Controller
     {
         return view('esercizi.inserisci');
     }
+
+    public function salva(Request $request, EserciziService $eserciziService)
+    {
+        $res = $eserciziService->salva($request);
+
+        $message = $res ? "Esercizio creato con succeesso" : 'Esercizio non creato';
+        session()->flash('message', $message);
+
+        return redirect()->route('esercizi');
+    }
 }

@@ -20,7 +20,14 @@
                 Clienti ({{$clients->total()}})
             </h1>
         </div>
-
+        <div>
+            <form class="d-flex" role="search" method="post" action="{{route('clienti.ricerca')}}" id="ricercaForm">
+                @csrf
+                <input class="form-control me-2 border-dark shadow" type="search" name="testo" id="testoRicerca" placeholder="nome o cognome" aria-label="Search">
+                <button class="btn btn-outline-primary" type="submit">Search</button> &nbsp;
+                <button class="btn btn-outline-warning" type="reset" id="resetBtn">Reset</button>
+            </form>
+        </div>
         <div>
             <a class="btn btn-success" href="{{route('clienti.inserisci')}}">Aggiungi</a>
         </div>
@@ -55,3 +62,5 @@
         </tbody>
     </table>
 @endsection
+
+@extends('partial.resetRicerca')
