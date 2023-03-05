@@ -52,7 +52,9 @@
                 <td>{{$item->email}}</td>
                 <td>{{$item->annoNascita}}</td>
                 <td>
-
+                        <a style="text-decoration: none" href="{{route('schedAllenamento', $item->id)}}" title="Schede: {{$item->schedallenamento_count}}">
+                            <i class="fas fa-fw fa-book" style="color: green"></i>
+                        </a>
                 </td>
             </tr>
         @endforeach

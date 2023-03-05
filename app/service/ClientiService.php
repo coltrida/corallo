@@ -8,7 +8,10 @@ class ClientiService
 {
     public function lista()
     {
-        return User::clienti()->latest()->paginate(10);
+        return User::clienti()
+                ->withCount('schedallenamento')
+                ->latest()
+                ->paginate(10);
     }
 
     public function filtraCliente($request)
@@ -20,5 +23,28 @@ class ClientiService
                     ->orWhere('cognome', 'like', '%'.$testo.'%');
             })
             ->paginate(10);
+    }
+
+    public function cliente($idCliente)
+    {
+        /*return User::with(['schedallenamento' => function($scheda){
+            $scheda->with(['giorniallenamento' => function($giorno){
+                $giorno->groupBy('giorno');
+            }]);
+        }])->find($idCliente);*/
+
+        /*return User::with(['schedallenamento' => function($scheda){
+            $scheda->with(['giorniallenamento' => function($giorni){
+                $giorni->orderBy('settimana')->with('allenamenti');
+            }]);
+        }])->find($idCliente);*/
+
+        return User::with(['schedallenamento' => function($scheda){
+            $scheda->with(['settimanallenamento' => function($settimana){
+                $settimana->with(['giorniallenamento' => function($giorno){
+                    $giorno->with('allenamenti');
+                }]);
+            }]);
+        }])->find($idCliente);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Schedallenamento;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -31,6 +32,15 @@ class UserSeeder extends Seeder
             'updated_at' => Carbon::now(),
         ]);
 
-        User::factory(300)->create();
+        User::factory(3)->create();
+
+        /*User::factory(300)->hasSchedallenamento(1)->each(function ($scheda){
+            $scheda->hasGiornoallenamento(3);
+        })->create();*/
+
+        /*User::factory(300)->create()->each(function ($user){
+            $scheda = Schedallenamento::make();
+            $user->schedallenamento->save($scheda);
+        });*/
     }
 }

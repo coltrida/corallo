@@ -23,7 +23,11 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
                 UserSeeder::class,
-                EsercizioSeeder::class
+                EsercizioSeeder::class,
+                /*SchedallenamentoSeeder::class,
+                SettimanallenamentoSeeder::class,
+                GiornoallenamentoSeeder::class,
+                AllenamentoSeeder::class,*/
             ]
         );
     }

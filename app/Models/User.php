@@ -42,6 +42,8 @@ use Laravel\Sanctum\HasApiTokens;
  * @method static \Illuminate\Database\Eloquent\Builder|User whereRole($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User clienti()
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Schedallenamento> $schedallenamento
+ * @property-read int|null $schedallenamento_count
  * @mixin \Eloquent
  */
 class User extends Authenticatable
@@ -81,5 +83,10 @@ class User extends Authenticatable
     public function scopeClienti($query)
     {
         return $query->where('role', 'u');
+    }
+
+    public function schedallenamento()
+    {
+        return $this->hasMany(Schedallenamento::class);
     }
 }

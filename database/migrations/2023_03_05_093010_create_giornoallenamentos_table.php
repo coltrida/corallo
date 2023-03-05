@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('schedallenamentos', function (Blueprint $table) {
+        Schema::create('giornoallenamentos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
+            $table->foreignId('settimanallenamento_id');
+            $table->string('giorno');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('schedallenamentos');
+        Schema::dropIfExists('giornoallenamentos');
     }
 };
