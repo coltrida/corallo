@@ -7,10 +7,9 @@ use Illuminate\Http\Request;
 
 class EsercizioController extends Controller
 {
-    public function esercizi(EserciziService $eserciziService)
+    public function esercizi()
     {
-        $esercizi = $eserciziService->lista();
-        return view('esercizi.index', compact('esercizi'));
+        return view('esercizi.index');
     }
 
     public function inserisci()

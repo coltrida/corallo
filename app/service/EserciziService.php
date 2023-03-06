@@ -8,7 +8,7 @@ class EserciziService
 {
     public function lista()
     {
-        return Esercizio::paginate(10);
+        return Esercizio::paginate(5);
     }
 
     public function listaNonPaginate()
@@ -27,7 +27,14 @@ class EserciziService
         }
 
         return $esercizio->save();
+    }
 
+    public function elimina($idEsercizio)
+    {
+        if (\Storage::disk('public')->exists("images/$idEsercizio.jpg")){
+            \Storage::disk('public')->delete("images/$idEsercizio.jpg");
+        }
+        Esercizio::find($idEsercizio)->delete();
     }
 
     private function salvaFoto($esercizio, $request): void

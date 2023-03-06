@@ -22,6 +22,7 @@ Route::middleware('auth')->group(function () {
 
     //-------------------- SCHEDE ALLENAMENTO ------------------------//
     Route::get('/schedAllenamento/{idCliente}', [SchedallenamentoController::class, 'schedAllenamento'])->name('schedAllenamento');
+    Route::get('/inserisciSchedAllenamento/{idCliente}', [SchedallenamentoController::class, 'inserisci'])->name('schedAllenamento.inserisci');
 
 });
 

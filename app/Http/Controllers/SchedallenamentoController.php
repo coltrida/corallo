@@ -11,4 +11,10 @@ class SchedallenamentoController extends Controller
     {
         return view('schedeAllenamento.index', compact('idCliente'));
     }
+
+    public function inserisci($idCliente)
+    {
+        return view('schedeAllenamento.inserisci', compact('idCliente'));
+    }
+
 }

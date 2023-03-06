@@ -34,13 +34,18 @@
     <div class="col-2">
         <h4>Schede
             <span>
-                <a style="text-decoration: none" href="#" title="Aggiungi">
+                <a style="text-decoration: none" href="{{route('schedAllenamento.inserisci', $cliente->id)}}" title="Aggiungi">
                             <i class="fas fa-fw fa-plus-circle" style="color: green"></i>
                 </a>
             </span>
         </h4>
         @foreach($schede as $scheda)
-            <button wire:click="selezionaScheda({{$scheda}})" class="btn btn-primary mb-3">{{$scheda->created_at->format('d-m-Y')}}</button>
+            <button wire:click="selezionaScheda({{$scheda}})" class="btn btn-primary">
+                {{$scheda->created_at->format('d-m-Y')}}
+            </button>
+            {{--<button class="btn btn-warning">
+                <i class="fas fa-fw fa-pencil"></i>
+            </button>--}}
         @endforeach
     </div>
 </div>

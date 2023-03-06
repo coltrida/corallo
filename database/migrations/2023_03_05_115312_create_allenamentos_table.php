@@ -19,7 +19,7 @@ return new class extends Migration
             $table->bigInteger('esercizio_id');
             $table->integer('ripetizioni');
             $table->integer('serie');
-            $table->integer('peso');
+            $table->integer('peso')->nullable();
             $table->timestamps();
         });
     }

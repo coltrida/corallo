@@ -4,10 +4,10 @@
         @csrf
         <div class="row">
             <div class="col">
-                <input type="text" name="nome" class="form-control" placeholder="Nome Esercizio" aria-label="First name">
+                <input type="text" name="nome" class="form-control border-dark shadow" placeholder="Nome Esercizio" aria-label="First name">
             </div>
             <div class="col">
-                <input class="form-control" name="file" type="file" id="formFile">
+                <input class="form-control border-dark shadow" name="file" type="file" id="formFile">
             </div>
             <div class="col">
                 <button type="submit" class="btn btn-primary">
