@@ -2,6 +2,7 @@
 
 namespace App\service;
 
+use App\Events\NuovoEsercizioEvent;
 use App\Models\Esercizio;
 
 class EserciziService
@@ -26,6 +27,7 @@ class EserciziService
             $this->salvaFoto($esercizio, $request);
         }
 
+        event(new NuovoEsercizioEvent('esercizio Salvato'));
         return $esercizio->save();
     }
 

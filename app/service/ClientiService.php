@@ -27,18 +27,6 @@ class ClientiService
 
     public function cliente($idCliente)
     {
-        /*return User::with(['schedallenamento' => function($scheda){
-            $scheda->with(['giorniallenamento' => function($giorno){
-                $giorno->groupBy('giorno');
-            }]);
-        }])->find($idCliente);*/
-
-        /*return User::with(['schedallenamento' => function($scheda){
-            $scheda->with(['giorniallenamento' => function($giorni){
-                $giorni->orderBy('settimana')->with('allenamenti');
-            }]);
-        }])->find($idCliente);*/
-
         return User::with(['schedallenamento' => function($scheda){
             $scheda->with(['settimanallenamento' => function($settimana){
                 $settimana->with(['giorniallenamento' => function($giorno){
