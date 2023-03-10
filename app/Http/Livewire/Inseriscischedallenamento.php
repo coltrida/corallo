@@ -10,6 +10,7 @@ use Livewire\Component;
 class Inseriscischedallenamento extends Component
 {
     public $cliente;
+    public $dataInizio;
     public $nrSettimane = 0;
     public $nrGiorniSettimana = 0;
     public $serie;
@@ -43,6 +44,7 @@ class Inseriscischedallenamento extends Component
         $request = new \Illuminate\Http\Request();
         $request->merge([
             'giorniSelezionati' => $this->giorniSelezionati,
+            'dataInizio' => $this->dataInizio,
             'user_id' => $this->cliente->id,
             'numeroSettimane' => $this->nrSettimane,
         ]);

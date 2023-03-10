@@ -19,9 +19,7 @@ class EserciziService
 
     public function salva($request)
     {
-        $esercizio = new Esercizio();
-        $esercizio->nome = $request->nome;
-        $esercizio->save();
+        $esercizio = Esercizio::create($request->except('file'));
 
         if ($request->hasFile('file')){
             $this->salvaFoto($esercizio, $request);
@@ -37,6 +35,12 @@ class EserciziService
             \Storage::disk('public')->delete("images/$idEsercizio.jpg");
         }
         Esercizio::find($idEsercizio)->delete();
+        event(new NuovoEsercizioEvent('esercizio Eliminato'));
+    }
+
+    public function dettagli($idEsercizio)
+    {
+        return Esercizio::find($idEsercizio);
     }
 
     private function salvaFoto($esercizio, $request): void

@@ -7,6 +7,15 @@
                 <input type="text" name="nome" class="form-control border-dark shadow" placeholder="Nome Esercizio" aria-label="First name">
             </div>
             <div class="col">
+                <input type="text" name="muscoli" class="form-control border-dark shadow" placeholder="Muscoli coinvolti" aria-label="First name">
+            </div>
+            <div class="col">
+                <input type="text" name="descrizione" class="form-control border-dark shadow" placeholder="Descrizione" aria-label="First name">
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col">
                 <input class="form-control border-dark shadow" name="file" type="file" id="formFile">
             </div>
             <div class="col">

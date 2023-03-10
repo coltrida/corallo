@@ -12,4 +12,9 @@ class EsercizioController extends Controller
     {
         return $eserciziService->listaNonPaginate();
     }
+
+    public function dettagli($idEsercizio, EserciziService $eserciziService)
+    {
+        return $eserciziService->dettagli($idEsercizio);
+    }
 }

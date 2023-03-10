@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('allenamentos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('giornoallenamento_id');
+            $table->foreign('giornoallenamento_id')->on('giornoallenamentos')->references('id')
+                ->onDelete('cascade')->onUpdate('cascade');
             $table->bigInteger('esercizio_id');
             $table->integer('ripetizioni');
             $table->integer('serie');

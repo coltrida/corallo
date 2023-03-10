@@ -20,8 +20,8 @@ class GiornoallenamentoSeeder extends Seeder
         foreach ($settimanaAllenamento as $settimana){
                 Giornoallenamento::insert([
                     [
-                    'settimanallenamento_id' => $settimana->id,
-                    'giorno' => 'lunedì',
+                        'settimanallenamento_id' => $settimana->id,
+                        'giorno' => 'lunedì',
                     ],
                     [
                         'settimanallenamento_id' => $settimana->id,
@@ -30,10 +30,6 @@ class GiornoallenamentoSeeder extends Seeder
                     [
                         'settimanallenamento_id' => $settimana->id,
                         'giorno' => 'venerdi',
-                    ],
-                    [
-                        'settimanallenamento_id' => $settimana->id,
-                        'giorno' => 'sabato',
                     ],
                 ]);
         }

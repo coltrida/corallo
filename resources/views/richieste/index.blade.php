@@ -17,20 +17,17 @@
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <div>
             <h1 class="h3 mb-0 text-gray-800">
-                Clienti ({{$clients->total()}})
+                Richieste
             </h1>
         </div>
         <div>
             <form class="d-flex" role="search" method="post" action="{{route('clienti.ricerca')}}" id="ricercaForm">
                 @csrf
                 <input class="form-control me-2 border-dark shadow" type="search" name="testo" id="testoRicerca"
-                       placeholder="nome o cognome" aria-label="Search">
+                       placeholder="cerca" aria-label="Search">
                 <button class="btn btn-outline-primary" type="submit">Search</button> &nbsp;
                 <button class="btn btn-outline-warning" type="reset" id="resetBtn">Reset</button>
             </form>
-        </div>
-        <div>
-            <a class="btn btn-success" href="{{route('clienti.inserisciModifica')}}">Aggiungi</a>
         </div>
     </div>
 
@@ -40,40 +37,23 @@
         <tr>
             <th scope="col">Nome</th>
             <th scope="col">Cognome</th>
-            <th scope="col">email</th>
-            <th scope="col">Anno Nascita</th>
+            <th scope="col">Richiesta</th>
             <th scope="col">Azioni</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($clients as $item)
+        @foreach($richieste as $item)
             <tr>
-                <td style="vertical-align: middle">{{$item->nome}}</td>
-                <td style="vertical-align: middle">{{$item->cognome}}</td>
-                <td style="vertical-align: middle">{{$item->email}}</td>
-                <td style="vertical-align: middle">{{$item->annoNascita}}</td>
+                <td style="vertical-align: middle">{{$item->user->nome}}</td>
+                <td style="vertical-align: middle">{{$item->user->cognome}}</td>
+                <td style="vertical-align: middle">{{$item->testo}}</td>
                 <td style="vertical-align: middle">
-                    <a class="btn btn-primary" href="{{route('schedAllenamento', $item->id)}}"
-                       title="Schede: {{$item->schedallenamento_count}}">
-                        <i class="fas fa-fw fa-book"></i>
-                    </a>
-                    <a class="btn btn-success" href="{{route('clienti.inserisciModifica', $item->id)}}"
-                       title="Modifica">
-                        <i class="fas fa-fw fa-pencil"></i>
-                    </a>
-                    <form action="{{route('clienti.elimina')}}" method="post" style="display: inline">
-                        @csrf
-                        @method('DELETE')
-                        <input type="hidden" name="idCliente" value="{{$item->id}}">
-                        <button title="elimina" class="btn btn-danger">
-                            <i class="fas fa-fw fa-trash"></i>
-                        </button>
-                    </form>
+
                 </td>
             </tr>
         @endforeach
         <tr>
-            <td colspan="5">{{$clients->links()}}</td>
+            <td colspan="5">{{$richieste->links()}}</td>
         </tr>
         </tbody>
     </table>

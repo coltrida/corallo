@@ -7,13 +7,16 @@ use App\Models\Giornoallenamento;
 use App\Models\Schedallenamento;
 use App\Models\Settimanallenamento;
 use App\Models\User;
+use Carbon\Carbon;
 
 class SchedallenamentoService
 {
     public function crea($request)
     {
+        $scadenza = Carbon::make($request->dataInizio)->addWeeks($request->numeroSettimane);
         $scheda = Schedallenamento::create([
-            'user_id' => $request->user_id
+            'user_id' => $request->user_id,
+            'scadenza' => $scadenza
         ]);
 
         for ($settimana = 1; $settimana <= $request->numeroSettimane; $settimana++){

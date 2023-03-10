@@ -16,20 +16,8 @@ class SchedallenamentoSeeder extends Seeder
      */
     public function run()
     {
-        $clienti = User::clienti()->get();
-        foreach ($clienti as $cliente){
-            $nrSchede = \Arr::random([1,2]);
-
-            for ($i=0; $i<$nrSchede; $i++){
-                Schedallenamento::create([
-                    'user_id' => $cliente->id
-                ]);
-            }
-        }
-
-        /*foreach ($clienti as $cliente){
-            $scheda = Schedallenamento::make();
-            $cliente->schedallenamento()->save($scheda);
-        }*/
+        Schedallenamento::create([
+            'user_id' => 2
+        ]);
     }
 }

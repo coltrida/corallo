@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('giornoallenamentos', function (Blueprint $table) {
+        Schema::create('settimanallenamentos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('settimanallenamento_id');
-            $table->foreign('settimanallenamento_id')->on('settimanallenamentos')->references('id')
+            $table->foreignId('schedallenamento_id');
+            $table->foreign('schedallenamento_id')->on('schedallenamentos')->references('id')
                 ->onDelete('cascade')->onUpdate('cascade');
-            $table->string('giorno');
+            $table->integer('numero');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('giornoallenamentos');
+        Schema::dropIfExists('settimanallenamentos');
     }
 };

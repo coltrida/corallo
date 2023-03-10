@@ -67,9 +67,9 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Prodotti
                     </a>
-                    <a class="nav-link" href="charts.html">
+                    <a class="nav-link" href="{{'richieste'}}">
                         <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                        Schede Allenamento
+                        Richieste
                     </a>
                     <a class="nav-link" href="tables.html">
                         <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>

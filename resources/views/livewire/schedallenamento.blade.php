@@ -40,7 +40,7 @@
             </span>
         </h4>
         @foreach($schede as $scheda)
-            <button wire:click="selezionaScheda({{$scheda}})" class="btn btn-primary">
+            <button wire:click="selezionaScheda({{$scheda}})" class="btn btn-primary mb-3">
                 {{$scheda->created_at->format('d-m-Y')}}
             </button>
             {{--<button class="btn btn-warning">

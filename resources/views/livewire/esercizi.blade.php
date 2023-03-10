@@ -30,6 +30,8 @@
         <tr>
             <th scope="col">Nome</th>
             <th scope="col">Foto</th>
+            <th scope="col">Muscoli</th>
+            <th scope="col">Descrizione</th>
             <th scope="col">Azioni</th>
         </tr>
         </thead>
@@ -39,9 +41,11 @@
                 <td style="vertical-align: middle">{{$item->nome}}</td>
                 <td style="vertical-align: middle">
                     @if(isset($item->linkFoto))
-                    <img width="100px" src="{{asset("storage/$item->linkFoto")}}" alt="foto">
+                        <img width="100px" src="{{asset("storage/$item->linkFoto")}}" alt="foto">
                     @endif
                 </td>
+                <td style="vertical-align: middle">{{$item->muscoli}}</td>
+                <td style="vertical-align: middle">{{$item->descrizione}}</td>
                 <td style="vertical-align: middle">
                     <button wire:click="eliminaEsercizio({{$item->id}})" type="button" class="btn btn-danger">
                         <i  class="fas fa-fw fa-trash"></i>

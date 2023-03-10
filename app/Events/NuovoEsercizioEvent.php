@@ -37,6 +37,6 @@ class NuovoEsercizioEvent implements ShouldBroadcast
     }
 
     public function broadcastAs(){
-        return 'esercizio-created';
+        return 'esercizio-evento';
     }
 }

@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('esercizios', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
+            $table->string('muscoli')->nullable();
+            $table->string('descrizione')->nullable();
             $table->string('linkFoto')->nullable();
             $table->timestamps();
         });

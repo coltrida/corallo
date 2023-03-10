@@ -12,11 +12,15 @@
     </div>
 
     <div class="row">
-        <div class="col-2">
+        <div class="col">
+            <input type="date" id="dataInizio" wire:model="dataInizio" class="form-control border-dark shadow" aria-label="First name">
+            <label for="dataInizio" class="ml-2 text-gray-600">Data Inizio</label>
+        </div>
+        <div class="col">
             <input type="number" id="nrSettimane" wire:model="nrSettimane" class="form-control border-dark shadow" aria-label="First name">
             <label for="nrSettimane" class="ml-2 text-gray-600">Nr. Settimane</label>
         </div>
-        <div class="col-2">
+        <div class="col">
             <select class="form-select border-dark shadow" aria-label="Default select example"
                     id="nrGiorniSettimana" wire:model="nrGiorniSettimana"
                     wire:change="selezionaNrGiorniSettimana($event.target.value)">

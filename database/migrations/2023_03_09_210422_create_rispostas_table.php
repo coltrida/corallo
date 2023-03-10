@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('settimanallenamentos', function (Blueprint $table) {
+        Schema::create('rispostas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('schedallenamento_id');
-            $table->integer('numero');
+            $table->foreignId('richiesta_id');
+            $table->foreign('richiesta_id')->on('richiestas')->references('id')
+                ->onDelete('cascade')->onUpdate('cascade');
+            $table->text('testo');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('settimanallenamentos');
+        Schema::dropIfExists('rispostas');
     }
 };
