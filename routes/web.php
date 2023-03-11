@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EsercizioController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RichiestaController;
 use App\Http\Controllers\SchedallenamentoController;
@@ -30,6 +31,12 @@ Route::middleware('auth')->group(function () {
 
     //-------------------- RICHIESTE ------------------------//
     Route::get('/richieste', [RichiestaController::class, 'index'])->name('richieste');
+
+    //-------------------- NEWS ------------------------//
+    Route::get('/news', [NewsController::class, 'index'])->name('news');
+    Route::get('/inserisciModifica/{idNews?}', [NewsController::class, 'inserisciModifica'])->name('news.inserisciModifica');
+    Route::post('/salvaNews', [NewsController::class, 'salva'])->name('news.salva');
+    Route::patch('/modificaNews', [NewsController::class, 'modifica'])->name('news.modifica');
 
 });
 

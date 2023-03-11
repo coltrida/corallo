@@ -71,9 +71,9 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                         Richieste
                     </a>
-                    <a class="nav-link" href="tables.html">
-                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                        Schede Alimentazione
+                    <a class="nav-link" href="{{'news'}}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-newspaper"></i></div>
+                        News
                     </a>
                     {{--<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
