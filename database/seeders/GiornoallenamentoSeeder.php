@@ -21,7 +21,7 @@ class GiornoallenamentoSeeder extends Seeder
                 Giornoallenamento::insert([
                     [
                         'settimanallenamento_id' => $settimana->id,
-                        'giorno' => 'lunedì',
+                        'giorno' => 'lunedi',
                     ],
                     [
                         'settimanallenamento_id' => $settimana->id,

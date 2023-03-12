@@ -67,4 +67,11 @@ class SchedallenamentoService
     {
         Allenamento::find($idAllenamento)->delete();
     }
+
+    public function salvaPeso($request)
+    {
+        Allenamento::find($request->allenamentoId)->update([
+            'peso' => $request->peso
+        ]);
+    }
 }

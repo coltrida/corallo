@@ -2,6 +2,7 @@
 
 namespace App\service;
 
+use App\Events\NuovaNewsEvent;
 use App\Models\News;
 
 class NewsService
@@ -28,6 +29,8 @@ class NewsService
             $this->salvaFoto($news, $request);
         }
         $news->save();
+
+        event(new NuovaNewsEvent($news));
     }
 
     public function modifica($request)

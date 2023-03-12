@@ -19,7 +19,7 @@
                                     <td>{{$item->esercizio->nome}}</td>
                                     <td>{{$item->serie}}</td>
                                     <td>{{$item->ripetizioni}}</td>
-                                    <td>{{$item->peso}}</td>
+                                    <td @if($item->created_at != $item->updated_at) style="background: #fffb7f" @endif>{{$item->peso}}</td>
                                 </tr>
                             @endforeach
                             </tbody>

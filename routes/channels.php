@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Broadcast;
 Broadcast::channel('esercizioChannel', function () {
     return true;
 });
+
+Broadcast::channel('newsChannel', function () {
+    return true;
+});
