@@ -46,6 +46,7 @@ class ClientiService
             'annoNascita' => $request->annoNascita,
             'email' => $request->email,
             'role' => 'u',
+            'logged' => false,
             'password' => \Hash::make('123456'),
         ]);
     }

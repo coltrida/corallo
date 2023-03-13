@@ -21,6 +21,7 @@ class UserSeeder extends Seeder
     {
         User::create([
             'role' => 'a',
+            'logged' => true,
             'nome' => 'cacao',
             'cognome' => 'cacao2',
             'email' => 'cacao@cacao.it',
