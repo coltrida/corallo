@@ -32,7 +32,7 @@ class UserSeeder extends Seeder
             'updated_at' => Carbon::now(),
         ]);
 
-        User::factory(3)->create();
+     //   User::factory(3)->create();
 
         /*User::factory(300)->hasSchedallenamento(1)->each(function ($scheda){
             $scheda->hasGiornoallenamento(3);
