@@ -42,6 +42,7 @@
             <th scope="col">Cognome</th>
             <th scope="col">email</th>
             <th scope="col">Anno Nascita</th>
+            <th scope="col">Registrato</th>
             <th scope="col">Azioni</th>
         </tr>
         </thead>
@@ -52,6 +53,7 @@
                 <td style="vertical-align: middle">{{$item->cognome}}</td>
                 <td style="vertical-align: middle">{{$item->email}}</td>
                 <td style="vertical-align: middle">{{$item->annoNascita}}</td>
+                <td style="vertical-align: middle">{{$item->logged ? 'YES' : 'NO'}}</td>
                 <td style="vertical-align: middle">
                     <a class="btn btn-primary" href="{{route('schedAllenamento', $item->id)}}"
                        title="Schede: {{$item->schedallenamento_count}}">

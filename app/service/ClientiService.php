@@ -4,6 +4,7 @@ namespace App\service;
 
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 
 class ClientiService
 {
@@ -76,14 +77,15 @@ class ClientiService
         }
 
         if ($request->password != $request->confermaPassword){
-            return 2;
+            return -1;
         }
 
         $cliente->update([
             'logged' => true,
             'email_verified_at' => Carbon::now(),
+            'remember_token' => Str::random(10),
             'password' => \Hash::make($request->password)
         ]);
-        return 1;
+        return $cliente->id;
     }
 }
