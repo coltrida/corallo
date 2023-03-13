@@ -75,7 +75,7 @@
             </tr>
         @endforeach
         <tr>
-            <td colspan="5">{{$clients->links()}}</td>
+            <td colspan="6">{{$clients->links()}}</td>
         </tr>
         </tbody>
     </table>

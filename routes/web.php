@@ -25,18 +25,22 @@ Route::middleware('auth')->group(function () {
     Route::get('/inserisciEsercizio', [EsercizioController::class, 'inserisci'])->name('esercizi.inserisci');
     Route::post('/inserisciEsercizio', [EsercizioController::class, 'salva'])->name('esercizi.salva');
 
-    //-------------------- SCHEDE ALLENAMENTO ------------------------//
-    Route::get('/schedAllenamento/{idCliente}', [SchedallenamentoController::class, 'schedAllenamento'])->name('schedAllenamento');
-    Route::get('/inserisciSchedAllenamento/{idCliente}', [SchedallenamentoController::class, 'inserisci'])->name('schedAllenamento.inserisci');
-
-    //-------------------- RICHIESTE ------------------------//
-    Route::get('/richieste', [RichiestaController::class, 'index'])->name('richieste');
-
     //-------------------- NEWS ------------------------//
     Route::get('/news', [NewsController::class, 'index'])->name('news');
     Route::get('/inserisciModifica/{idNews?}', [NewsController::class, 'inserisciModifica'])->name('news.inserisciModifica');
     Route::post('/salvaNews', [NewsController::class, 'salva'])->name('news.salva');
     Route::patch('/modificaNews', [NewsController::class, 'modifica'])->name('news.modifica');
+
+
+    //-------------------- SCHEDE ALLENAMENTO ------------------------//
+  //  Route::get('/schedAllenamento/{idCliente}', [SchedallenamentoController::class, 'schedAllenamento'])->name('schedAllenamento');
+    Route::get('/schedAllenamento/{idCliente}', \App\Http\Livewire\Schedallenamento::class);
+    Route::get('/inserisciSchedAllenamento/{idCliente}', [SchedallenamentoController::class, 'inserisci'])->name('schedAllenamento.inserisci');
+
+    //-------------------- RICHIESTE ------------------------//
+    Route::get('/richieste', [RichiestaController::class, 'index'])->name('richieste');
+
+
 
 });
 
