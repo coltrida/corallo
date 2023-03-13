@@ -70,7 +70,7 @@ class ClientiService
 
     public function aggiornaPass($request)
     {
-        $cliente = User::find($request->email);
+        $cliente = User::where('email', $request->email)->firstOrFail();
         if (!$cliente){
             return 0;
         }
