@@ -17,4 +17,5 @@ Route::get('/esercizio/{idEsercizio}', [EsercizioController::class, 'dettagli'])
 Route::get('/cliente/{idCliente}', [ClienteController::class, 'index']);
 Route::get('/ultimaNews', [NewsController::class, 'ultima']);
 Route::post('/richiesta', [RichiestaController::class, 'salva']);
+Route::post('/aggiornaPassword', [ClienteController::class, 'aggiornaPassword']);
 Route::patch('/salvaPeso', [SchedaController::class, 'salvaPeso']);

@@ -3,6 +3,7 @@
 namespace App\service;
 
 use App\Models\User;
+use Carbon\Carbon;
 
 class ClientiService
 {
@@ -65,5 +66,24 @@ class ClientiService
     public function elimina($request)
     {
         User::find($request->idCliente)->delete();
+    }
+
+    public function aggiornaPass($request)
+    {
+        $cliente = User::find($request->email);
+        if (!$cliente){
+            return 0;
+        }
+
+        if ($request->password != $request->confermaPassword){
+            return 2;
+        }
+
+        $cliente->update([
+            'logged' => true,
+            'email_verified_at' => Carbon::now(),
+            'password' => \Hash::make($request->password)
+        ]);
+        return 1;
     }
 }

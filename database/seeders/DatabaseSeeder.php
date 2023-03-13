@@ -18,10 +18,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
                 UserSeeder::class,
                 EsercizioSeeder::class,
-                SchedallenamentoSeeder::class,
+                /*SchedallenamentoSeeder::class,
                 SettimanallenamentoSeeder::class,
                 GiornoallenamentoSeeder::class,
-                AllenamentoSeeder::class,
+                AllenamentoSeeder::class,*/
             ]
         );
 

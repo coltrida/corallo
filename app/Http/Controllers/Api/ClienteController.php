@@ -12,4 +12,9 @@ class ClienteController extends Controller
     {
         return $clientiService->cliente($idCliente);
     }
+
+    public function aggiornaPassword(Request $request, ClientiService $clientiService)
+    {
+        return $clientiService->aggiornaPass($request);
+    }
 }
