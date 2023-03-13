@@ -1,3 +1,5 @@
+@extends('layouts.admin')
+@section('content')
 <div class="row">
     <div class="col-10">
         <h4>{{$cliente->nome.' '.$cliente->cognome}}</h4>
@@ -49,3 +51,4 @@
         @endforeach
     </div>
 </div>
+@endsection
