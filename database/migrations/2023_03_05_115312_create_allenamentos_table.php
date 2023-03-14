@@ -21,6 +21,7 @@ return new class extends Migration
             $table->bigInteger('esercizio_id');
             $table->integer('ripetizioni');
             $table->integer('serie');
+            $table->time('rest');
             $table->integer('peso')->nullable();
             $table->timestamps();
         });

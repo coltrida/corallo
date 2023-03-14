@@ -33,7 +33,7 @@
             <th scope="col">Titolo</th>
             <th scope="col">Testo</th>
             <th scope="col">Foto</th>
-            <th scope="col">Azioni</th>
+            {{--<th scope="col">Azioni</th>--}}
         </tr>
         </thead>
         <tbody>
@@ -43,7 +43,7 @@
                 <td style="vertical-align: middle">{{$item->titolo}}</td>
                 <td style="vertical-align: middle">{{$item->testo}}</td>
                 <td style="vertical-align: middle">@if(isset($item->linkFoto))<img width="100px" src="{{asset("storage/$item->linkFoto")}}" alt="foto">@endif</td>
-                <td style="vertical-align: middle">
+                {{--<td style="vertical-align: middle">
                     <a class="btn btn-success" href="{{route('news.inserisciModifica', $item->id)}}"
                        title="Modifica">
                         <i class="fas fa-fw fa-pencil"></i>
@@ -56,7 +56,7 @@
                             <i class="fas fa-fw fa-trash"></i>
                         </button>
                     </form>
-                </td>
+                </td>--}}
             </tr>
         @endforeach
         <tr>
