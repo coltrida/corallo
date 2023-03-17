@@ -12,6 +12,8 @@
                             <th scope="col">Serie</th>
                             <th scope="col">Rip</th>
                             <th scope="col">Peso</th>
+                            <th scope="col">Duration</th>
+                            <th scope="col">Rest</th>
                             </thead>
                             <tbody>
                             @foreach($ele->allenamenti as $item)
@@ -20,6 +22,8 @@
                                     <td>{{$item->serie}}</td>
                                     <td>{{$item->ripetizioni}}</td>
                                     <td @if($item->created_at != $item->updated_at) style="background: #fffb7f" @endif>{{$item->peso}}</td>
+                                    <td>{{\Carbon\Carbon::make($item->duration)->format('m:i')}}</td>
+                                    <td>{{\Carbon\Carbon::make($item->rest)->format('m:i')}}</td>
                                 </tr>
                             @endforeach
                             </tbody>

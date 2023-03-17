@@ -16,6 +16,8 @@ class Inseriscischedallenamento extends Component
     public $serie;
     public $esercizio_id;
     public $ripetizioni;
+    public $duration;
+    public $rest;
     public $giorni = ['lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì', 'sabato'];
     public $giorniSelezionati = [];
     public $giorniSalvati = [];
@@ -60,6 +62,8 @@ class Inseriscischedallenamento extends Component
             'esercizio_id' => $this->esercizio_id,
             'serie' => $this->serie,
             'ripetizioni' => $this->ripetizioni,
+            'duration' => $this->duration,
+            'rest' => $this->rest,
         ]);
 
         $this->giornoInteressato = $schedallenamentoService->salva($request);

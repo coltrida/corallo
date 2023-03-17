@@ -49,7 +49,9 @@ class SchedallenamentoService
                 'giornoallenamento_id' => $item['id'],
                 'esercizio_id' => $request->esercizio_id,
                 'serie' => $request->serie,
-                'ripetizioni' => $request->ripetizioni
+                'ripetizioni' => $request->ripetizioni,
+                'duration' => $request->duration,
+                'rest' => $request->rest,
             ]);
         }
 //dd($giorniInteressati);

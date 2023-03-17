@@ -92,6 +92,12 @@
                 <input type="number" wire:model="ripetizioni" placeholder="rip" class="form-control border-dark shadow" aria-label="First name">
             </div>
             <div class="col">
+                <input type="time" wire:model="duration" class="form-control border-dark shadow" aria-label="First name">
+            </div>
+            <div class="col">
+                <input type="time" wire:model="rest" class="form-control border-dark shadow" aria-label="First name">
+            </div>
+            <div class="col">
                 <button class="btn btn-primary" wire:click="selezionaEsercizio">Aggiungi</button>
             </div>
         </div>
@@ -103,6 +109,8 @@
                 <th scope="col">Serie</th>
                 <th scope="col">Rip</th>
                 <th scope="col">Azioni</th>
+                <th scope="col">Duration</th>
+                <th scope="col">Rest</th>
             </tr>
             </thead>
             <tbody>
@@ -111,6 +119,8 @@
                     <td>{{$ele->esercizio->nome}}</td>
                     <td>{{$ele->serie}}</td>
                     <td>{{$ele->ripetizioni}}</td>
+                    <td>{{$ele->duration}}</td>
+                    <td>{{$ele->rest}}</td>
                     <td>
                         <button wire:click="elimina({{$ele->id}})" class="btn btn-danger">
                             <i  class="fas fa-fw fa-trash" ></i>
