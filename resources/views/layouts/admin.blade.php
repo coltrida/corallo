@@ -67,11 +67,11 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Prodotti
                     </a>
-                    <a class="nav-link" href="{{'richieste'}}">
+                    <a class="nav-link" href="{{route('richieste')}}">
                         <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                         Richieste
                     </a>
-                    <a class="nav-link" href="{{'news'}}">
+                    <a class="nav-link" href="{{route('news')}}">
                         <div class="sb-nav-link-icon"><i class="fas fa-newspaper"></i></div>
                         News
                     </a>

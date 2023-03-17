@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Esercizio;
 use App\service\EserciziService;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -27,4 +28,5 @@ class Esercizi extends Component
             'listaEsercizi' => $eserciziService->lista()
         ]);
     }
+
 }

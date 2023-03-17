@@ -19,8 +19,8 @@ class ClientiService
     public function filtraCliente($request)
     {
         $testo = $request->testo;
-        return User::
-            where(function($query) use($testo) {
+        return User::clienti()
+            ->where(function($query) use($testo) {
                 $query->where('nome', 'like', '%'.$testo.'%')
                     ->orWhere('cognome', 'like', '%'.$testo.'%');
             })

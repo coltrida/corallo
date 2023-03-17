@@ -19,10 +19,14 @@ class EserciziService
 
     public function salva($request)
     {
-        $esercizio = Esercizio::create($request->except('file'));
+        $esercizio = Esercizio::create($request->except(['file', 'videoFile']));
 
         if ($request->hasFile('file')){
             $this->salvaFoto($esercizio, $request);
+        }
+
+        if ($request->hasFile('videoFile')){
+            $this->salvaVideo($esercizio, $request);
         }
 
         event(new NuovoEsercizioEvent('esercizio Salvato'));
@@ -49,5 +53,13 @@ class EserciziService
         $filename = $esercizio->id . '.' . $file->extension();
         $filenameWithPath = $file->storeAs('images', $filename);
         $esercizio->linkFoto = $filenameWithPath;
+    }
+
+    private function salvaVideo($esercizio, $request): void
+    {
+        $file = $request->file('videoFile');
+        $filename = $esercizio->id . '.' . $file->extension();
+        $filenameWithPath = $file->storeAs('video', $filename);
+        $esercizio->linkVideo = $filenameWithPath;
     }
 }

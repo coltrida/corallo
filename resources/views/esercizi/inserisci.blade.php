@@ -16,13 +16,22 @@
 
         <div class="row mt-5">
             <div class="col">
-                <input class="form-control border-dark shadow" name="file" type="file" id="formFile">
+                <label for="formFile" class="form-label">Immagine Esercizio</label>
+                <input class="form-control border-dark shadow"  name="file" type="file" id="formFile">
             </div>
+            <div class="col">
+                <label for="videoFile" class="form-label">Video Esercizio</label>
+                <input class="form-control border-dark shadow"   name="videoFile" type="file" id="videoFile">
+            </div>
+        </div>
+
+        <div class="row mt-5">
             <div class="col">
                 <button type="submit" class="btn btn-primary">
                     inserisci
                 </button>
             </div>
+
         </div>
     </form>
 

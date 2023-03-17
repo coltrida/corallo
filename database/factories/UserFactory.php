@@ -19,6 +19,7 @@ class UserFactory extends Factory
     {
         return [
             'role' => 'u',
+            'logged' => false,
             'nome' => fake()->name(),
             'cognome' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),

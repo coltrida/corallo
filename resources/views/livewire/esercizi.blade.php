@@ -50,6 +50,11 @@
                     <button wire:click="eliminaEsercizio({{$item->id}})" type="button" class="btn btn-danger">
                         <i  class="fas fa-fw fa-trash"></i>
                     </button>
+                    @if(isset($item->linkVideo))
+                    <a href="{{asset('storage/'.$item->linkVideo)}}" target="_blank" class="btn btn-primary">
+                        <i  class="fas fa-fw fa-play"></i>
+                    </a>
+                    @endif
                 </td>
             </tr>
         @endforeach

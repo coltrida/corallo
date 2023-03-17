@@ -33,7 +33,20 @@ class UserSeeder extends Seeder
             'updated_at' => Carbon::now(),
         ]);
 
-     //   User::factory(3)->create();
+        User::create([
+            'role' => 'u',
+            'logged' => false,
+            'nome' => 'Davide',
+            'cognome' => 'Coltrioli',
+            'email' => 'coltrida@gmail.com',
+            'email_verified_at' => Carbon::now(),
+            'password' => Hash::make('123456'),
+            'annoNascita' => 1975,
+            'remember_token' => Str::random(10),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+       // User::factory(30)->create();
 
         /*User::factory(300)->hasSchedallenamento(1)->each(function ($scheda){
             $scheda->hasGiornoallenamento(3);

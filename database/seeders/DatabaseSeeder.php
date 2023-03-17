@@ -26,6 +26,10 @@ class DatabaseSeeder extends Seeder
         );
 
         Storage::disk('public')->deleteDirectory('images/');
+        Storage::disk('public')->deleteDirectory('news/');
+        Storage::disk('public')->deleteDirectory('video/');
         Storage::disk('public')->makeDirectory('images/');
+        Storage::disk('public')->makeDirectory('news/');
+        Storage::disk('public')->makeDirectory('video/');
     }
 }

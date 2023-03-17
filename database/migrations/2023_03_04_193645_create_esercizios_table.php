@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('muscoli')->nullable();
             $table->string('descrizione')->nullable();
             $table->string('linkFoto')->nullable();
+            $table->string('linkVideo')->nullable();
             $table->timestamps();
         });
     }
