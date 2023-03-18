@@ -1,5 +1,5 @@
-<div class="row">
-    <div class="col-10">
+<div style="display: flex; flex-direction: row;">
+    <div style="flex: auto;">
         <h4 class="mb-3">{{$cliente->nome.' '.$cliente->cognome}}</h4>
         @foreach($settimane as $settimana)
             <h5>Settimana: {{$settimana->numero}}</h5>
@@ -18,7 +18,7 @@
                             <tbody>
                             @foreach($ele->allenamenti as $item)
                                 <tr>
-                                    <td>{{$item->esercizio->nome}}</td>
+                                    <td style="white-space: nowrap;">{{$item->esercizio->nome}}</td>
                                     <td>{{$item->serie}}</td>
                                     <td>{{$item->ripetizioni}}</td>
                                     <td @if($item->created_at != $item->updated_at) style="background: #fffb7f" @endif>{{$item->peso}}</td>
@@ -35,14 +35,14 @@
 
         @endforeach
     </div>
-    <div class="col">
-        <h4>Schede
+    <div style="margin-left:15px; width: 9rem;">
+        <h3>Schede
             <span>
                 <a style="text-decoration: none" href="{{route('schedAllenamento.inserisci', $cliente->id)}}" title="Aggiungi">
                             <i class="fas fa-fw fa-plus-circle" style="color: green"></i>
                 </a>
             </span>
-        </h4>
+        </h3>
         @foreach($schede as $scheda)
             <button wire:click="selezionaScheda({{$scheda}})" class="btn btn-primary">
                 {{$scheda->created_at->format('d-m-Y')}}

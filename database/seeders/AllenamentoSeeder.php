@@ -18,18 +18,91 @@ class AllenamentoSeeder extends Seeder
     public function run()
     {
         $giornoAllenamento = Giornoallenamento::get();
-            foreach ($giornoAllenamento as $giorno) {
-                for ($i=0; $i<3; $i++){
-                    Allenamento::create([
-                        'giornoallenamento_id' => $giorno->id,
-                        'esercizio_id' => Esercizio::get()->random()->id,
-                        'ripetizioni' => \Arr::random([8, 6]),
-                        'serie' => \Arr::random([3, 4]),
-                        'peso' => \Arr::random([30, 40, 10, 20, 23, 56]),
-                        'duration' => \Arr::random(['01:00:00', '01:30:00']) ,
-                        'rest' => \Arr::random(['02:00:00', '03:30:00']),
-                    ]);
+            foreach ($giornoAllenamento as $item) {
+                    if ($item->giorno == 'lunedi'){
+                        Allenamento::insert([
+                            [
+                                'giornoallenamento_id' => $item->id,
+                                'esercizio_id' => Esercizio::get()[0]->id,
+                                'ripetizioni' => 8,
+                                'serie' => 4,
+                                'duration' => \Arr::random(['01:00:00', '01:30:00']) ,
+                                'rest' => \Arr::random(['02:00:00', '03:30:00']),
+                            ],
+                            [
+                                'giornoallenamento_id' => $item->id,
+                                'esercizio_id' => Esercizio::get()[1]->id,
+                                'ripetizioni' => 10,
+                                'serie' => 3,
+                                'duration' => \Arr::random(['01:00:00', '01:30:00']) ,
+                                'rest' => \Arr::random(['02:00:00', '03:30:00']),
+                            ],
+                            [
+                                'giornoallenamento_id' => $item->id,
+                                'esercizio_id' => Esercizio::get()[2]->id,
+                                'ripetizioni' => 8,
+                                'serie' => 3,
+                                'duration' => \Arr::random(['01:00:00', '01:30:00']) ,
+                                'rest' => \Arr::random(['02:00:00', '03:30:00']),
+                            ],
+                        ]);
+                    } elseif ($item->giorno == 'mercoledi'){
+                        Allenamento::insert([
+                            [
+                                'giornoallenamento_id' => $item->id,
+                                'esercizio_id' => Esercizio::get()[3]->id,
+                                'ripetizioni' => 8,
+                                'serie' => 4,
+                                'duration' => \Arr::random(['01:00:00', '01:30:00']) ,
+                                'rest' => \Arr::random(['02:00:00', '03:30:00']),
+                            ],
+                            [
+                                'giornoallenamento_id' => $item->id,
+                                'esercizio_id' => Esercizio::get()[4]->id,
+                                'ripetizioni' => 10,
+                                'serie' => 3,
+                                'duration' => \Arr::random(['01:00:00', '01:30:00']) ,
+                                'rest' => \Arr::random(['02:00:00', '03:30:00']),
+                            ],
+                            [
+                                'giornoallenamento_id' => $item->id,
+                                'esercizio_id' => Esercizio::get()[5]->id,
+                                'ripetizioni' => 8,
+                                'serie' => 3,
+                                'duration' => \Arr::random(['01:00:00', '01:30:00']) ,
+                                'rest' => \Arr::random(['02:00:00', '03:30:00']),
+                            ],
+                        ]);
+                    } elseif ($item->giorno == 'venerdi'){
+                        Allenamento::insert([
+                            [
+                                'giornoallenamento_id' => $item->id,
+                                'esercizio_id' => Esercizio::get()[6]->id,
+                                'ripetizioni' => 8,
+                                'serie' => 4,
+                                'duration' => \Arr::random(['01:00:00', '01:30:00']) ,
+                                'rest' => \Arr::random(['02:00:00', '03:30:00']),
+                            ],
+                            [
+                                'giornoallenamento_id' => $item->id,
+                                'esercizio_id' => Esercizio::get()[7]->id,
+                                'ripetizioni' => 10,
+                                'serie' => 3,
+                                'duration' => \Arr::random(['01:00:00', '01:30:00']) ,
+                                'rest' => \Arr::random(['02:00:00', '03:30:00']),
+                            ],
+                            [
+                                'giornoallenamento_id' => $item->id,
+                                'esercizio_id' => Esercizio::get()[8]->id,
+                                'ripetizioni' => 8,
+                                'serie' => 3,
+                                'duration' => \Arr::random(['01:00:00', '01:30:00']) ,
+                                'rest' => \Arr::random(['02:00:00', '03:30:00']),
+                            ],
+                        ]);
+                    }
+
                 }
-            }
+
     }
 }

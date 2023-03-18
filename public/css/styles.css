@@ -11381,7 +11381,7 @@ body {
   z-index: 1039;
 }
 .sb-nav-fixed #layoutSidenav #layoutSidenav_nav {
-  width: 160px;
+  width: 125px;
   height: 100vh;
   z-index: 1038;
 }
@@ -11392,7 +11392,7 @@ body {
   overflow-y: auto;
 }
 .sb-nav-fixed #layoutSidenav #layoutSidenav_content {
-  padding-left: 172px;
+  padding-left: 131px;
   top: 56px;
 }
 

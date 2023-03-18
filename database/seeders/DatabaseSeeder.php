@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
                 SettimanallenamentoSeeder::class,
                 GiornoallenamentoSeeder::class,
                 AllenamentoSeeder::class,
+                NewsSeeder::class
             ]
         );
 
