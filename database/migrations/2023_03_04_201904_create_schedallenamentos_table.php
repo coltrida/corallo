@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreign('user_id')->on('users')->references('id')
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->date('scadenza')->nullable();
+            $table->boolean('inScadenza')->default(false);
             $table->timestamps();
         });
     }

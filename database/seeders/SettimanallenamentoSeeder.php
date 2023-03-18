@@ -16,9 +16,10 @@ class SettimanallenamentoSeeder extends Seeder
      */
     public function run()
     {
+        $idScheda = Schedallenamento::first()->id;
         for($giorno = 1; $giorno < 5; $giorno++){
             Settimanallenamento::create([
-                'schedallenamento_id' => 1,
+                'schedallenamento_id' => $idScheda,
                 'numero' => $giorno
             ]);
         }

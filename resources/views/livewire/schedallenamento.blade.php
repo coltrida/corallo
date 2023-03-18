@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-10">
-        <h4>{{$cliente->nome.' '.$cliente->cognome}}</h4>
+        <h4 class="mb-3">{{$cliente->nome.' '.$cliente->cognome}}</h4>
         @foreach($settimane as $settimana)
             <h5>Settimana: {{$settimana->numero}}</h5>
             <div class="row">
@@ -12,7 +12,7 @@
                             <th scope="col">Serie</th>
                             <th scope="col">Rip</th>
                             <th scope="col">Peso</th>
-                            <th scope="col">Duration</th>
+                            <th scope="col">Time</th>
                             <th scope="col">Rest</th>
                             </thead>
                             <tbody>
@@ -35,7 +35,7 @@
 
         @endforeach
     </div>
-    <div class="col-2">
+    <div class="col">
         <h4>Schede
             <span>
                 <a style="text-decoration: none" href="{{route('schedAllenamento.inserisci', $cliente->id)}}" title="Aggiungi">
@@ -44,9 +44,12 @@
             </span>
         </h4>
         @foreach($schede as $scheda)
-            <button wire:click="selezionaScheda({{$scheda}})" class="btn btn-primary mb-3">
+            <button wire:click="selezionaScheda({{$scheda}})" class="btn btn-primary">
                 {{$scheda->created_at->format('d-m-Y')}}
             </button>
+            <div style="margin: 0 0 5px 0; padding: 0; font-size: 12px">
+                scadenza: {{$scheda->scadenza}}
+            </div>
             {{--<button class="btn btn-warning">
                 <i class="fas fa-fw fa-pencil"></i>
             </button>--}}

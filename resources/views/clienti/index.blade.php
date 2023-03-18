@@ -49,7 +49,16 @@
         <tbody>
         @foreach($clients as $item)
             <tr>
-                <td style="vertical-align: middle">{{$item->nome}}</td>
+                <td style="vertical-align: middle">
+                    <span class="position-relative">
+                    @if($item->schedallenamento[0]->inScadenza)
+                    <span title="scheda in scadenza" class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                        <span class="visually-hidden">New alerts</span>
+                    </span>
+                    @endif
+                    {{$item->nome}}
+                    </span>
+                </td>
                 <td style="vertical-align: middle">{{$item->cognome}}</td>
                 <td style="vertical-align: middle">{{$item->email}}</td>
                 <td style="vertical-align: middle">{{$item->annoNascita}}</td>

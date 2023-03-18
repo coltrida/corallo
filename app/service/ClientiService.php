@@ -12,6 +12,9 @@ class ClientiService
     {
         return User::clienti()
                 ->withCount('schedallenamento')
+                ->with(['schedallenamento' => function($scheda){
+                    $scheda->latest();
+                }])
                 ->latest()
                 ->paginate(10);
     }
@@ -20,6 +23,8 @@ class ClientiService
     {
         $testo = $request->testo;
         return User::clienti()
+            ->withCount('schedallenamento')
+            ->with('schedallenamento')
             ->where(function($query) use($testo) {
                 $query->where('nome', 'like', '%'.$testo.'%')
                     ->orWhere('cognome', 'like', '%'.$testo.'%');

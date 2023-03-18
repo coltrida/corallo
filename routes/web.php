@@ -38,10 +38,10 @@ Route::middleware('auth')->group(function () {
 
     //-------------------- RICHIESTE ------------------------//
     Route::get('/richieste', [RichiestaController::class, 'index'])->name('richieste');
-
-
-
 });
+
+//-------------------- CONTROLLO SCADENZE SCHEDE ------------------------//
+Route::get('/controlloScadenzeSchede', [HomeController::class, 'controllo']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

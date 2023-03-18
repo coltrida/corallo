@@ -19,13 +19,15 @@ class AllenamentoSeeder extends Seeder
     {
         $giornoAllenamento = Giornoallenamento::get();
             foreach ($giornoAllenamento as $giorno) {
-                for ($i=0; $i<12; $i++){
+                for ($i=0; $i<3; $i++){
                     Allenamento::create([
                         'giornoallenamento_id' => $giorno->id,
                         'esercizio_id' => Esercizio::get()->random()->id,
                         'ripetizioni' => \Arr::random([8, 6]),
                         'serie' => \Arr::random([3, 4]),
-                        'peso' => \Arr::random([30, 40, 10, 20, 23, 56])
+                        'peso' => \Arr::random([30, 40, 10, 20, 23, 56]),
+                        'duration' => \Arr::random(['01:00:00', '01:30:00']) ,
+                        'rest' => \Arr::random(['02:00:00', '03:30:00']),
                     ]);
                 }
             }
